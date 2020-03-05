@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="12abc3cf-b0f7-415d-9f59-14275c007c69" name="Default Changelist" comment="" />
+    <list default="true" id="12abc3cf-b0f7-415d-9f59-14275c007c69" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -30,6 +32,7 @@
     </option>
   </component>
   <component name="ProjectId" id="1X3vq4S90yWCRqdMC9SuwfcQWwI" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -145,12 +148,24 @@
       <workItem from="1582852991330" duration="2522000" />
       <workItem from="1583025165177" duration="650000" />
       <workItem from="1583065572915" duration="11000" />
-      <workItem from="1583369281776" duration="1519000" />
+      <workItem from="1583369281776" duration="2652000" />
     </task>
+    <task id="LOCAL-00001" summary="lcle">
+      <created>1583378192599</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1583378192599</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="lcle" />
+    <option name="LAST_COMMIT_MESSAGE" value="lcle" />
   </component>
   <component name="WindowStateProjectService">
     <state x="371" y="96" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1582096229228">
@@ -165,18 +180,22 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="331" y="266" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1280.680@0.0.1280.680" timestamp="1582439695509" />
+    <state x="145" y="0" key="CommitChangelistDialog2" timestamp="1583378191100">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="145" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1583378191100" />
     <state x="421" y="79" key="FileChooserDialogImpl" timestamp="1583377962285">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="421" y="79" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1583377962285" />
-    <state x="465" y="254" width="375" height="172" key="Github.CreateGistDialog" timestamp="1583377766148">
+    <state x="465" y="254" width="375" height="172" key="Github.CreateGistDialog" timestamp="1583378219421">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="465" y="254" width="375" height="172" key="Github.CreateGistDialog/0.0.1280.680@0.0.1280.680" timestamp="1583377766148" />
-    <state x="518" y="232" width="269" height="290" key="Github.ShareDialog" timestamp="1583377930014">
+    <state x="465" y="254" width="375" height="172" key="Github.CreateGistDialog/0.0.1280.680@0.0.1280.680" timestamp="1583378219421" />
+    <state x="518" y="232" width="269" height="290" key="Github.ShareDialog" timestamp="1583379260770">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="518" y="232" width="269" height="290" key="Github.ShareDialog/0.0.1280.680@0.0.1280.680" timestamp="1583377930014" />
+    <state x="518" y="232" width="269" height="290" key="Github.ShareDialog/0.0.1280.680@0.0.1280.680" timestamp="1583379260770" />
     <state width="1237" height="141" key="GridCell.Tab.0.bottom" timestamp="1582882315634">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
