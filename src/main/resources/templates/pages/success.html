@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>品牌管理</title>
+    <script src="/static/js/vue.js" type="text/javascript" charset="utf-8"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link href="/static/css/bootstrap.min.css" />
+</head>
+<body>
+<div id="div1">
+    <div class="panel-body form-inner">
+        <label>ID</label>
+        <input id="text1" v-model="id"/>
+
+        <label>名称</label>
+        <input id="text2" v-model="name"/>
+        <button id="btn2" v-on:click="add" v-color="'blue'">添加</button>
+        <input v-model="keywords"/>
+    </div>
+    <table >
+        <thead>
+        <th>名称</th>
+        <th>创建时间</th>
+        <th>删除记录</th>
+        </thead>
+        <tbody>
+        <tr v-for="item in select(keywords)" v-bind:key="item.id">
+            <!--使用过滤器时，我们先把要过滤的对象用管道命令传递给过滤器-->
+            <td>{{item.username}}</td>
+            <td>{{item.updateTime | myfilter}}</td>
+            <td><button v-on:click="del(item.id)">删除</button></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<script>
+    //在vue中可以利用过滤器完成页面文本的格式化操作
+    //但是过滤器只能用到插值表达式和v-bind标签用到的地方
+    //第一个参数是过滤器的名称，第二个是过滤器的回调函数
+    Vue.filter("myfilter", function(str){
+        var format = new Date(str);
+        var year = format.getFullYear();
+        //字符串的padStart(len, "")方法，在字符串开始填充字符串，len指的是需要填充到几位，后面的是用什么填充
+        var month = (format.getMonth() + 1).toString().padStart(2, "0");
+        var day = format.getDate().toString().padStart(2, "0");
+        //return year+"-"+month+"-"+day
+        //使用拼接字符串的方法固然是可以的，下面的方法也行(模板字符串)
+        return `${year}-${month}-${day}`
+
+    })
+
+    // 自定义指令的相关练习
+    // Vue.directive('focus', {
+    // 	//无论哪个方法，函数传入的第一个参数一定是，绑定的DOM节点即el,那是一个原生的js对象
+    // 	//如果是和样式有关的操作，放在这里
+    // 	bind:function(el){  //指令绑定到DOM元素的时候会触发一次
+    // 		el.focus();
+    // 	},
+    // 	//和行为有关的操作，放在这里
+    // 	inserted:function(el){  //插入到DOM中是会触发函数
+    // 		el.focus();
+    // 	},
+    // 	updates:function(){  //节点DOM更新时触发一次
+
+    // 	}
+    // })
+
+    Vue.directive('color', {
+        bind:function(el, ui){
+            el.style.color = ui.value
+        }
+    })
+
+    var vue = new Vue({
+        el:'#div1',
+        data:{
+            list:[
+                {id: 1, username:"奔驰", create:new Date()},
+                {id: 2, username:"宝马", create:new Date()},
+                {id: 3, username:"布加迪威龙", create:new Date()},
+                {id: 4, username:"超音速", create:new Date()}
+            ],
+            name:null,
+            id:null,
+            keywords:""
+        },
+        methods:{
+            add:function(){
+                axios.post('/test/addCar', {
+                    username:this.name
+                }).then(function (data) {
+                    console.log("you have success add a record!")
+                }).catch(function (error) {
+                    console.log("there are some error in the program")
+                })
+                this.id = this.name = null
+            },
+            del:function(id){
+                axios.get('/test/delCar?Id='+id).then(function () {
+                    console.log("you have success add a record!")
+                }).catch(function (error) {
+                    console.log("there are some error in the program")
+                })
+            },
+            select:function(keywords){
+                var seList = [];
+                //可以使用forEach完成对于数组的遍历，然后利用关键字进行筛选
+                axios.get('/test/getCars').then((data)=>{
+                    this.list = data.data.data.data
+                }).catch((error)=>{
+                    console.log(error)
+                })
+                this.list.forEach(item =>{
+                    if(item.username.indexOf(keywords) != -1){
+                        seList.push(item)
+                    }
+                })
+                return seList;
+            }
+        },
+        //如果不使用全局指令，也可以在vue实例中定义私有指令，满足需求
+        directives:{
+            'color':{
+                bind:function(el, ui){
+                    el.style.color = ui.value
+                }
+            },
+            'focus':function(el){
+                el.focus()
+            }
+        }
+    })
+</script>
+</body>
+</html>

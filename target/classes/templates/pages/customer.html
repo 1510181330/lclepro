@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>人员汇总</title>
+		<meta name="renderer" content="webkit">
+		  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		  <meta name="apple-mobile-web-app-status-bar-style" content="black"> 
+		  <meta name="apple-mobile-web-app-capable" content="yes">
+		  <meta name="format-detection" content="telephone=no">
+		  
+		  <link rel="stylesheet" href="/static/css/layui.css"  media="all">
+		<link rel="stylesheet" href="/static/css/bootstrap.min.css">
+		<style type="text/css">
+			/* Chart.js */
+
+			@-webkit-keyframes chartjs-render-animation {
+				from {
+					opacity: 0.99
+				}
+				to {
+					opacity: 1
+				}
+			}
+
+			@keyframes chartjs-render-animation {
+				from {
+					opacity: 0.99
+				}
+				to {
+					opacity: 1
+				}
+			}
+
+			.chartjs-render-monitor {
+				-webkit-animation: chartjs-render-animation 0.001s;
+				animation: chartjs-render-animation 0.001s;
+			}
+
+			.modal-dialog {
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+			}
+
+			.modal-content {
+				/*模态框滚动条的样式，不加的话，按钮会被挤掉 */
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				width: 100%;
+			}
+
+			.modal-body {
+				overflow-y: scroll;
+				position: absolute;
+				top: 55px;
+				bottom: 65px;
+				width: 100%;
+			}
+
+			.modal-header .close {margin-right: 15px;}
+
+			.modal-footer {
+				position: absolute;
+				width: 100%;
+				bottom: 0;
+			}
+		</style>
+	</head>
+	<body class="layui-layout-body">
+		<div class="layui-layout layui-layout-admin">
+		  <div class="layui-header">
+		    <div class="layui-logo">为之则易，不为则难</div>
+		    <!-- 头部区域（可配合layui已有的水平导航） -->
+		    <ul class="layui-nav layui-layout-right">
+		      <li class="layui-nav-item">
+		        <a href="javascript:;">
+		          <img src="http://39.108.110.147:888/touxiang.jpg" class="layui-nav-img">
+		          贤心
+		        </a>
+		        <dl class="layui-nav-child">
+		          <dd><a href="">基本资料</a></dd>
+		          <dd><a href="">安全设置</a></dd>
+		        </dl>
+		      </li>
+		      <li class="layui-nav-item"><a href="">退了</a></li>
+		    </ul>
+		  </div>
+		  
+		  <div class="layui-side layui-bg-black">
+		    <div class="layui-side-scroll">
+		      <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+		      <ul class="layui-nav layui-nav-tree"  lay-filter="test">
+		        <li class="layui-nav-item layui-nav-itemed">
+					<a href="javascript:;">人员汇总</a>
+		        </li>
+		        <li class="layui-nav-item">
+					<a href="javascript:;">值班表制作</a>
+		        </li>
+		        <li class="layui-nav-item">
+					<a href="javascript:;">文件制作</a>
+					<dl class="layui-nav-child">
+						<dd><a href="#">文件录入</a></dd>
+						<dd><a href="#">记录修改</a></dd>
+					</dl>
+				</li>
+		        <li class="layui-nav-item">
+					<a href="#">文件生成</a>
+				</li>
+				<li class="layui-nav-item">
+					<a href="#">关于系统</a>
+				</li>
+		      </ul>
+		    </div>
+		  </div>
+		  
+		  <div class="layui-body">
+		    <!-- 内容主体区域 -->
+			  <table class="layui-table">
+				  <colgroup>
+					  <col width="150">
+					  <col width="200">
+					  <col>
+				  </colgroup>
+				  <thead>
+				  <tr>
+					  <th>编号</th>
+					  <th>姓名</th>
+					  <th>性别</th>
+					  <th>QQ</th>
+					  <th>电话号码</th>
+					  <th>所属部门</th>
+					  <th>更新</th>
+					  <th>删除</th>
+				  </tr>
+				  </thead>
+				  <tbody>
+				  <tr id="row1">
+					  <td colspan="8" style="text-align: center; font-size: 20px">学风督察部</td>
+				  </tr>
+				  <tr id="row2">
+					  <td colspan="8" style="text-align: center; font-size: 20px">信息管理部</td>
+				  </tr>
+				  <tr id="row3">
+					  <td colspan="8" style="text-align: center; font-size: 20px">组织宣传部</td>
+				  </tr>
+				  <tr id="row4">
+					  <td colspan="8" style="text-align: center; font-size: 20px">思想教育部</td>
+				  </tr>
+				  <tr id="row5">
+					  <td colspan="8" style="text-align: center; font-size: 20px">办公室</td>
+				  </tr>
+				  </tbody>
+			  </table>
+		  <div class="layui-footer">
+		    <!-- 底部固定区域 -->
+		    © 限于不粘锅
+		  </div>
+		</div>
+		</div>
+		<script src="/static/js/layer.js" type="text/javascript"></script>
+		<script>
+			layer.msg('hello');
+		</script>
+		<script src="/static/js/jquery-3.4.1.min.js" type="text/javascript"></script>
+		<script src="/static/js/Word/customer.js" type="text/javascript"></script>
+	</body>
+</html>
